@@ -1,0 +1,179 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+:root {
+    --bg-color: #ECF2F8;
+    --white-color: #fff;
+    --primary-color: #733FC8;
+    --primary-accent-color: #A775F1;
+    --secondary-color: #48556A;
+    --tertiary-color: #19202D;
+    --lightest-gray-color: #CFCFCF;
+}
+
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    min-height: 100vh;
+    margin: 1rem;
+    padding:1rem;
+}
+
+.container {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+    "img card_name card_title"
+    "card_main-quote card_main-quote card_main-quote card_main-quote"
+    "card_testimonial card_testimonial card_testimonial card_testimonial";
+}
+
+.grid-col-span-2 {
+    grid-column: span 2;
+}
+
+.card:last-child {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+}
+
+img {
+    grid-area: img;
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+}
+
+.card {
+    border-radius: 10px;
+    padding: 1.5rem;
+    line-height: 1.2;
+}
+.card_name {
+    grid-area: card_name;
+    
+}
+
+.card1 .card_name,
+.card2 .card_name,
+.card4 .card_name {
+    color: var(--bg-color);
+}
+
+.card3 .card_name,
+.card5 .card_name {
+    color: var(--lightest-gray-color);
+}
+
+.card_title {
+    grid-area: card_title;
+    margin-bottom: 1.5rem;
+}
+.top{
+    display:flex;
+    flex-direction: row;
+    gap:1rem;
+}
+
+.card1 .card_title,
+.card2 .card_title,
+.card4 .card_title {
+    color: var(--bg-color);
+}
+
+.card3 .card_title,
+.card5 .card_title {
+    color: var(--lightest-gray-color);
+}
+
+.card_main-quote {
+    grid-area: card_main-quote;
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+}
+#quotes{
+    width:10%;
+    height:40%;
+    padding: 0;
+    margin-left: 50%; 
+}
+
+
+.card1 .card_main-quote,
+.card2 .card_main-quote,
+.card4 .card_main-quote {
+    color: var(--bg-color);
+    font-size: .90rem;
+}
+
+.card3 .card_main-quote,
+.card5 .card_main-quote {
+    color: var(--lightest-gray-color);
+    font-size: .90rem;
+}
+
+.card_testimonial {
+    grid-area: card_testimonial;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.card1 .card_testimonial,
+.card2 .card_testimonial,
+.card4 .card_testimonial {
+    color: var(--bg-color);
+    font-size: .77rem;
+}
+
+.card3 .card_testimonial,
+.card5 .card_testimonial {
+    color: var(--lightest-gray-color);
+    font-size: .77rem;
+}
+
+/* Individual Card Styling */
+
+.card1 {
+    background-color: var(--primary-color);
+}
+
+.card2 {
+    background-color: var(--secondary-color);
+}
+
+.card3 {
+    background-color: var(--secondary-color);
+    color: #000;
+}
+
+.card4 {
+    background-color: var(--tertiary-color);
+}
+
+.card5 {
+    background-color: var(--primary-accent-color);
+}
+
+@media screen and (max-width: 375px) {
+    .container {
+        display: grid;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+        "img card_name card_title"
+        "card_main-quote"
+        "card_testimonial";
+    }
+}
+
